@@ -18,7 +18,7 @@ function HomeScreen() {
     }
 
     useEffect(() => {
-        axios.get("http://localhost:5000/review")
+        axios.get("/review")
             .then(res => {
                 setReviews(res.data)
             })
@@ -30,7 +30,7 @@ function HomeScreen() {
             stars, review, name
         }
 
-        axios.post("http://localhost:5000/review", rev)
+        axios.post("/review", rev)
             .then(res => {
                 showAddReview(res.data.showReview)
             })
@@ -195,7 +195,7 @@ function HomeScreen() {
                             <form onSubmit={submitHandler}>
                                 <div className="form-group">
                                     <label>Rate Us: </label>
-                                    <ReactStars classNames="formStars" count={5} size={40} onChange={ratingChanged} activeColor="#ffd700" />
+                                    <ReactStars classNames="formStars" count={5} size={35} onChange={ratingChanged} activeColor="#ffd700" />
                                 </div>
                                 <div className="form-group">
                                     <textarea className="block" name="review" id="review" placeholder="Enter Review" required onChange={(e) => setReview(e.target.value)} />

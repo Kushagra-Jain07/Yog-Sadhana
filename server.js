@@ -6,7 +6,7 @@ const reviewRoute = require("./routes/reviewRoute")
 
 const PORT = process.env.PORT || 8080
 
-const URL = process.env.MONGODB_URI || "mongodb://localhost/yogsadhana"
+const URL = "mongodb+srv://kushagra:kushjain@yoga.sas7z.mongodb.net/yogsadhana?retryWrites=true&w=majority"
 
 mongoose.connect(URL, {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
@@ -24,4 +24,4 @@ if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'))
 }
 
-app.listen(PORT, ()=> console.log("Server Started at ${PORT}"))
+app.listen(PORT, ()=> console.log(`Server Started at ${PORT}`))
