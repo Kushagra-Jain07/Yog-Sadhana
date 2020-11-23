@@ -207,7 +207,7 @@ h5 {
   flex-direction: column;
 }
 .reviewSection .card {
-  height: 350px !important;
+  height: 400px !important;
   transform: none !important;
   transition: none !important;
 }
@@ -260,9 +260,12 @@ h5 {
     font-size: 26px;
   }
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 350px) {
   .reviewSection h1 {
     font-size: 23px;
+  }
+  .reviewSection .card {
+    height: 500px !important;
   }
 }
 
